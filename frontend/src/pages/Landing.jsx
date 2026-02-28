@@ -205,7 +205,7 @@ export default function Landing() {
                 style={styles.githubBtn}
                 onClick={() =>
                   window.open(
-                    "https://github.com/yourusername/eventflow",
+                    "https://github.com/SovaD/event-flow-app.git",
                     "_blank",
                   )
                 }
