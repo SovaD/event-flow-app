@@ -4,6 +4,8 @@ import axios from "axios";
 import { User, Mail, Lock, UserPlus, AlertCircle } from "lucide-react"; // Иконки для солидности
 
 export default function Register({ setAuth }) {
+  
+   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +17,7 @@ export default function Register({ setAuth }) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        `${API_URL}/auth/register`,
         formData,
       );
       localStorage.setItem("token", res.data.token);

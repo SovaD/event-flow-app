@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Contacts() {
+   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({ name: '', email: '', phone: '', category: 'Гость' });
   const [editingId, setEditingId] = useState(null);
@@ -10,7 +11,7 @@ export default function Contacts() {
 
   const fetchContacts = async () => {
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://localhost:5000/api/contacts', { headers: { Authorization: `Bearer ${token}` } });
+    const res = await axios.get(`${API_URL}/contacts`, { headers: { Authorization: `Bearer ${token}` } });
     setContacts(res.data);
   };
 
@@ -18,10 +19,10 @@ export default function Contacts() {
     e.preventDefault();
     const token = localStorage.getItem('token');
     if (editingId) {
-      await axios.put(`http://localhost:5000/api/contacts/${editingId}`, newContact, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`${API_URL}/contacts/${editingId}`, newContact, { headers: { Authorization: `Bearer ${token}` } });
       setEditingId(null);
     } else {
-      await axios.post('http://localhost:5000/api/contacts/add', newContact, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.post(`${API_URL}/contacts/add`, newContact, { headers: { Authorization: `Bearer ${token}` } });
     }
     setNewContact({ name: '', email: '', phone: '', category: 'Гость' });
     fetchContacts();
@@ -30,7 +31,7 @@ export default function Contacts() {
   const deleteContact = async (id) => {
     if (!window.confirm('Точно удалить гостя?')) return;
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:5000/api/contacts/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    await axios.delete(`${API_URL}/contacts/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     fetchContacts();
   };
 

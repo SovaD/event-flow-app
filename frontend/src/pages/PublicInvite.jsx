@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PublicInvite() {
+  
+   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
   const { eventId, guestId } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ export default function PublicInvite() {
 
   useEffect(() => {
     
-    axios.get(`http://localhost:5000/api/events/public/${eventId}/guest/${guestId}`)
+    axios.get(`${API_URL}/events/public/${eventId}/guest/${guestId}`)
       .then(res => {
         setData(res.data);
         setLoading(false);
@@ -23,7 +25,7 @@ export default function PublicInvite() {
 
   const handleRSVP = async (status) => {
     try {
-      await axios.post(`http://localhost:5000/api/events/public/${eventId}/guest/${guestId}/rsvp`, { status });
+      await axios.post(`${API_URL}/events/public/${eventId}/guest/${guestId}/rsvp`, { status });
       setData({ ...data, currentStatus: status });
       setReplied(true);
     } catch (error) {

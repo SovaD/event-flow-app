@@ -5,6 +5,8 @@ import axios from "axios";
 import { Zap, Key, Mail, AlertCircle } from "lucide-react";
 
 export default function Login({ setAuth }) {
+  
+   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   
@@ -33,7 +35,7 @@ export default function Login({ setAuth }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const response = await axios.post(`${API_URL}/auth/login`, { email, password });
       localStorage.setItem("token", response.data.token);
       if (setAuth) setAuth(true);
       window.location.href = '/events'; 

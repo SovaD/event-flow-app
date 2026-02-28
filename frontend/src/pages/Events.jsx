@@ -14,6 +14,8 @@ const getCategoryStyle = (category) => {
 };
 
 export default function Events() {
+   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+
   const [events, setEvents] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -51,7 +53,7 @@ export default function Events() {
     const token = localStorage.getItem("token");
     if (!token) return;
     try {
-      const res = await axios.get("http://localhost:5000/api/events", {
+      const res = await axios.get(`${API_URL}/events`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEvents(res.data);
@@ -70,7 +72,7 @@ export default function Events() {
     const token = localStorage.getItem("token");
     if (!token) return;
     try {
-      const res = await axios.get("http://localhost:5000/api/contacts", {
+      const res = await axios.get(`${API_URL}/contacts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setContacts(res.data);
@@ -107,12 +109,12 @@ export default function Events() {
     try {
       if (editingEventId) {
         await axios.put(
-          `http://localhost:5000/api/events/${editingEventId}`,
+          `${API_URL}/events/${editingEventId}`,
           newEvent,
           { headers: { Authorization: `Bearer ${token}` } },
         );
       } else {
-        await axios.post("http://localhost:5000/api/events/add", newEvent, {
+        await axios.post(`${API_URL}/events/add`, newEvent, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }
@@ -138,7 +140,7 @@ export default function Events() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/events/${eventId}/guest/${guestId}`,
+        `${API_URL}/events/${eventId}/guest/${guestId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } },
       );
@@ -152,7 +154,7 @@ export default function Events() {
     e.stopPropagation();
     if (!window.confirm("Удалить мероприятие?")) return;
     const token = localStorage.getItem("token");
-    await axios.delete(`http://localhost:5000/api/events/${id}`, {
+    await axios.delete(`${API_URL}/events/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchEvents();
@@ -164,7 +166,7 @@ export default function Events() {
     const token = localStorage.getItem("token");
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contacts/add",
+        `${API_URL}/contacts/add`,
         newQuickContact,
         { headers: { Authorization: `Bearer ${token}` } },
       );
