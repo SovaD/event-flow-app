@@ -10,6 +10,7 @@ export default function Login({ setAuth }) {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");

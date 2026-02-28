@@ -11,6 +11,9 @@ export default function Register({ setAuth }) {
     email: "",
     password: "",
   });
+
+
+  
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {

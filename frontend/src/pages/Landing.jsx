@@ -194,6 +194,7 @@ export default function Landing() {
               интерфейс.
             </p>
 
+
             <div style={styles.finalActions}>
               <button
                 style={styles.primaryBtnLarge}

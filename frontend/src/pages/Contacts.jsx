@@ -40,6 +40,7 @@ export default function Contacts() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  
   return (
     <div>
       <div className="card" style={{ marginBottom: '20px' }}>
