@@ -1,0 +1,356 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+
+.app-container {
+  max-width: 900px; 
+  margin: 0 auto;   
+  padding: 40px 20px; 
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ffe6ef;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #ff4b82;
+  margin: 0;
+}
+
+/* карточка  */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 75, 130, 0.08);
+  margin-bottom: 30px;
+}
+
+/* Формы */
+.form-group {
+  display: flex;
+  gap: 15px;
+}
+
+input, select {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #ff4b82;
+  box-shadow: 0 0 0 3px #ffe6ef;
+}
+
+/* Кнопки */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff4b82;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e63e70;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ff4b82;
+  border: 1px solid #ff4b82;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-outline:hover {
+  background-color: #ffe6ef;
+}
+
+/* Сетка контактов */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  border-left: 4px solid #ff4b82;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-name {
+  margin: 0 0 8px 0;
+  color: #222;
+  font-size: 18px;
+}
+
+.contact-category {
+  display: inline-block;
+  background: #ffe6ef;
+  color: #ff4b82;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.contact-details {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+/* НАВИГАЦИЯ */
+.nav-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap; 
+}
+
+.nav-tab {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 12px 20px;
+  background-color: white;
+  border: 2px solid #ffe6ef;
+  border-radius: 8px;
+  color: #ff4b82;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-tab:hover {
+  background-color: #ffe6ef;
+}
+
+.nav-tab.active {
+  background-color: #ff4b82;
+  color: white;
+  border-color: #ff4b82;
+  box-shadow: 0 4px 10px rgba(255, 75, 130, 0.2);
+}
+
+/* Стили для карточек событий */
+.event-card {
+  background: white;
+  border-top: 4px solid #ff4b82;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #ff4b82 !important;
+  box-shadow: 0 0 0 2px rgba(255, 75, 130, 0.1);
+}
+/*   ОБЩАЯ НАВИГАЦИЯ И ШАПКА (App.jsx) */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #fff0f5;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  color: #ff4b82;
+  margin: 0;
+  font-size: 28px;
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #ff4b82;
+  color: #ff4b82;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background: #ff4b82;
+  color: white;
+}
+
+.app-nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.nav-link {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+  background: #fff;
+  color: #ff4b82;
+  border: 2px solid #ff4b82;
+}
+
+.nav-link.active {
+  background: #ff4b82;
+  color: #fff;
+}
+
+/*    СТРАНИЦЫ АВТОРИЗАЦИИ (Register / Login) */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.auth-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  border-top: 4px solid #ff4b82;
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #ff4b82;
+  box-shadow: 0 0 0 2px rgba(255, 75, 130, 0.1);
+}
+
+.auth-error {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-link {
+  color: #ff4b82;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #6A0572, #9D4EDD, #FF4B82, #F9A03F);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  padding: 20px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Стили для картинок на лендинге */
+.landing-image {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
