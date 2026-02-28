@@ -5,7 +5,7 @@ import { User, Mail, Lock, UserPlus, AlertCircle } from "lucide-react"; // Ик�
 
 export default function Register({ setAuth }) {
   
-   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+   const API_URL = process.env.REACT_APP_API_URL;
   const [formData, setFormData] = useState({
     name: "",
     email: "",

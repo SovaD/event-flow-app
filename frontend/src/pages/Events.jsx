@@ -14,7 +14,7 @@ const getCategoryStyle = (category) => {
 };
 
 export default function Events() {
-   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+   const API_URL = process.env.REACT_APP_API_URL;
 
   const [events, setEvents] = useState([]);
   const [contacts, setContacts] = useState([]);

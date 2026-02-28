@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 export default function Contacts() {
-   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+   const API_URL = process.env.REACT_APP_API_URL;
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({ name: '', email: '', phone: '', category: 'Гость' });
   const [editingId, setEditingId] = useState(null);

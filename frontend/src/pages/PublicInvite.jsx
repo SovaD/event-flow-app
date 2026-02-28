@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function PublicInvite() {
   
-   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+   const API_URL = process.env.REACT_APP_API_URL;
   const { eventId, guestId } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
