@@ -1,16 +1,32 @@
-# React + Vite
+## EventFlow — Элегантная платформа для организации событий
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EventFlow — это современное React-приложение, предназначенное для упрощения процесса планирования мероприятий. От управления базой контактов до отслеживания RSVP-ответов гостей — всё собрано в одном стильном интерфейсе с эффектом "матового стекла" (glassmorphism).
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Основные возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+На основе концепции проекта, описанной в документации:
 
-## Expanding the ESLint configuration
+* Безупречная эстетика: Современный UI/UX дизайн, вдохновленный принципами чистоты и комфорта.
+* Золотой актив контактов: Единая база гостей, которую нужно заполнить лишь однажды.
+* Управление без стресса: Интуитивно понятное создание карточек событий с описанием и таймингом.
+* RSVP-магия: Генерация персональных ссылок для подтверждения присутствия гостями.
+* Безопасность: Защита данных пользователей с использованием JWT-авторизации.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Технологический стек
+
+* Frontend: React.js
+* Иконки: Lucide-React
+* Стилизация: Встроенный CSS (Scoped styles) для простоты развертывания.
+* Дизайн-система: Glassmorphism, CSS Gradients.
+
+
+## Инструкция организатора
+
+* Авторизация: Войдите в систему (можно использовать демо-данные из раздела "О платформе").
+* Контакты: Настройте свою базу VIP-гостей.
+* Событие: Создайте новый ивент и прикрепите к нему гостей.
+* Приглашение: Скопируйте RSVP-ссылку и отправьте её гостю.
+
+© 2026 EventFlow.
