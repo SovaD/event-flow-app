@@ -1,3 +1,19 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.)",
+      "destination": "https://www.google.com/search?q=https://event-flow-app.onrender.com/api/%241"
+    },
+    {
+      "source": "/(.)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.)",
+      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "" }]
+    }
+  ]
 }
