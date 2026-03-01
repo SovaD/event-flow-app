@@ -17,6 +17,13 @@ app.use(cors({
   credentials: true
 }));
 
+// app.use(cors({
+ 
+//   origin: '[https://event-flow-kboiimodj-sovads-projects.vercel.app](https://event-flow-kboiimodj-sovads-projects.vercel.app)', 
+//   credentials: true, 
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 app.use(express.json()); 
 
 app.use('/api/auth', authRoutes);
