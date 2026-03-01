@@ -1,12 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { API_URL } from '../api/apiConfig';
 
-// Безопасное получение URL с защитой от "process is not defined"
-const API_URL = (typeof process !== 'undefined' && process.env && process.env.REACT_APP_API_URL) 
-  ? process.env.REACT_APP_API_URL 
-  : (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL)
-    ? import.meta.env.VITE_API_URL
-    : "http://localhost:5000/api";
 
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
