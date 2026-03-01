@@ -1,5 +1,8 @@
+import React, { createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from './store/authSlice'; 
 
 import Landing from './pages/Landing';
 import Events from './pages/Events';
@@ -10,16 +13,17 @@ import Register from './pages/Register';
 
 import './App.css';
 
-
 function AppContent() {
-  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+ const token = useSelector((state) => state.auth.token);
+  const isAuthenticated = !!token;
+  
+  const dispatch = useDispatch();
   const navigate = useNavigate(); 
   const location = useLocation();
 
-  
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
+    // Вызываем экшен logout (он удалит токен из стора и localStorage)
+    dispatch(logout());
     navigate('/'); 
   };
 
@@ -40,7 +44,9 @@ function AppContent() {
           <Link to="/contacts" className={`nav-link ${location.pathname === '/contacts' ? 'active' : ''}`}>База Контактов</Link>
         </nav>
 
-        {children}
+        <div className="app-content-area">
+          {children}
+        </div>
       </div>
     );
   };
@@ -48,11 +54,15 @@ function AppContent() {
   return (
     <Routes>
       <Route path="/" element={!isAuthenticated ? <Landing /> : <Navigate to="/events" replace />} />
-      <Route path="/login" element={!isAuthenticated ? <Login setAuth={setIsAuthenticated} /> : <Navigate to="/events" replace />} />
-      <Route path="/register" element={!isAuthenticated ? <Register setAuth={setIsAuthenticated} /> : <Navigate to="/events" replace />} />
+      
+      <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/events" replace />} />
+      <Route path="/register" element={!isAuthenticated ? <Register /> : <Navigate to="/events" replace />} />
+      
       <Route path="/invite/:eventId/:guestId" element={<PublicInvite />} />
+      
       <Route path="/events" element={<ProtectedLayout><Events /></ProtectedLayout>} />
       <Route path="/contacts" element={<ProtectedLayout><Contacts /></ProtectedLayout>} />
+      
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

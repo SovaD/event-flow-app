@@ -11,7 +11,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    "http://localhost:3000", 
+    "http://localhost:5174", 
     process.env.FRONTEND_URL 
   ].filter(Boolean),
   credentials: true
