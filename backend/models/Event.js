@@ -4,7 +4,7 @@ const EventSchema = new mongoose.Schema({
   title: { type: String, required: true, trim: true },
   category: { 
     type: String, 
-    enum: ['Свадьба', 'Корпоратив', 'День рождения', 'Другое'], 
+    enum: ['Свадьба', 'Корпоратив', 'День рождения', 'Вечеринка', 'Другое'], 
     default: 'Другое' 
   },
   date: { type: Date, required: true },

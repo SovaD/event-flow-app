@@ -23,7 +23,6 @@ export default function Landing() {
 
   return (
     <div style={styles.page}>
-
       <header style={styles.header}>
         <div style={styles.headerContent}>
           <div style={styles.logo} onClick={() => navigate("/")}>
@@ -47,7 +46,6 @@ export default function Landing() {
       </header>
 
       <main style={styles.container}>
-        
         <section style={styles.hero}>
           <div style={styles.badge}> Project for Portfolio</div>
           <h1 style={styles.title}>
@@ -171,7 +169,6 @@ export default function Landing() {
           </section>
         </div>
 
-        
         <section style={styles.finalSection}>
           <div style={styles.finalCard}>
             <h2
@@ -193,7 +190,6 @@ export default function Landing() {
               10+ функций, 3 связанные модели данных, полностью адаптивный
               интерфейс.
             </p>
-
 
             <div style={styles.finalActions}>
               <button
@@ -221,8 +217,6 @@ export default function Landing() {
     </div>
   );
 }
-
-
 
 const TechCard = ({ id, icon, title, text, code, hovered, setHovered }) => (
   <div

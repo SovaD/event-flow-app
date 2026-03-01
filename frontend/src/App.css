@@ -12,9 +12,9 @@ body {
 
 
 .app-container {
-  max-width: 900px; 
-  margin: 0 auto;   
-  padding: 40px 20px; 
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 
@@ -47,7 +47,8 @@ body {
   gap: 15px;
 }
 
-input, select {
+input,
+select {
   padding: 12px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -55,7 +56,8 @@ input, select {
   transition: border-color 0.3s ease;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: #ff4b82;
   box-shadow: 0 0 0 3px #ffe6ef;
@@ -106,7 +108,7 @@ input:focus, select:focus {
   border-left: 4px solid #ff4b82;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .contact-name {
@@ -132,12 +134,13 @@ input:focus, select:focus {
   color: #666;
   line-height: 1.6;
 }
+
 /* НАВИГАЦИЯ */
 .nav-bar {
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .nav-tab {
@@ -170,21 +173,32 @@ input:focus, select:focus {
   border-top: 4px solid #ff4b82;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: #ff4b82 !important;
   box-shadow: 0 0 0 2px rgba(255, 75, 130, 0.1);
 }
+
 /*   ОБЩАЯ НАВИГАЦИЯ И ШАПКА (App.jsx) */
 .app-container {
   max-width: 1200px;
@@ -320,9 +334,17 @@ input:focus, textarea:focus, select:focus {
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .auth-page {
@@ -340,7 +362,7 @@ input:focus, textarea:focus, select:focus {
   background: rgba(255, 255, 255, 0.95);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -351,6 +373,6 @@ input:focus, textarea:focus, select:focus {
 .landing-image {
   width: 100%;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
